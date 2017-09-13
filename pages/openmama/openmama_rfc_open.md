@@ -17,4 +17,4 @@ toc: false
 
 | RFC Title | Proposer  | Raised | Agreed | Merged | Released | Discussed | Document | Changes |
 | --------- | --------- | ------ | ------ | ------ | -------- | --------- | -------- | ------- |
-| Source Discovery | [Gavin Ridgway](https://github.com/gridgway-arcontech) | TBC | TBC | TBC | TBC  | TBC | [View](openmama_rfc_source_discovery.html) | TBC |
+| Source Discovery | [Gavin Ridgway](https://github.com/gridgway-arcontech) | 2017-09-13 | TBC | TBC | TBC  | [Archive](https://lists.openmama.org/pipermail/openmama-dev/2017/002087.html) | [View](openmama_rfc_source_discovery.html) | TBC |
