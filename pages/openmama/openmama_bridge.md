@@ -34,6 +34,37 @@ Source file names are in *italics*. Paths beginning with a '/' are relative to t
 
  **mama/mama.h**:         *OpenMAMA_root/mama/c_cpp/src/mama/mama.h*
 
+# OpenMAMA Integration Headers
+
+It is now possible to access internal OpenMAMA methods and types
+using OpenMAMA's integration headers. You'll find these located in
+`<install-prefix>/include/mama/integration`. Each of these header
+files are header guarded and only accessible if the OPENMAMA_INTEGRATION
+macro is defined in your third party application at compile time. For
+example `-DOPENMAMA_INTEGRATION` or `/DOPENMAMA_INTEGRATION`.
+
+For an example of the sort of changes which are required to leverage this new API, see:
+
+[OpenMAMA ZeroMQ bridge example](https://github.com/cascadium/OpenMAMA-zmq/commit/4fc1c46212061d66c939dc34a65f87adf9d8622d)
+
+and
+
+[OpenMAMA OMNM payload example](https://github.com/cascadium/OpenMAMA-omnm/commit/3cde22a069dccebe39b5bef1769cdb19025f1b2b)
+
+To migrate from the old method of including internal headers, it mostly involves:
+
+* Stopping using the internal code tree and use a release instead. It's the easiest way to
+  decouple yourself from the internal code of OpenMAMA.
+* Stop using direct access to internal members of the bridge object and instead use the
+  getters and setters provided in the integration headers (e.g. mamaImpl_setDefaultEventQueue)
+* Adding includes for <mama/integration/types.h> since most of the types are defined there.
+* Replacing old internal header files with new integration header files. E.g. replacing `msgimpl.h`
+  with `mama/integration/msg.h`.
+
+If anything is missing from the integration headers, send a message around the developers mailing
+list, and we can see if it already exists.
+
+
 # Bridge Architecture Overview
 
 OpenMAMA bridges implement an internal bridge API defined in *bridge.h* that OpenMAMA loads into a virtual function table. MAMA objects like transports, subscriptions, queues, etc. access the native middleware through this virtual function table. By allowing multiple virtual function tables OpenMAMA enables applications to use multiple middlewares.
