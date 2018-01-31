@@ -93,18 +93,35 @@ will be moved from dqstrategy.c into dqstrategyplugin.c.  The existing dqContext
 
 The following hooks will be added:
 
-initHook
+### initHook
 
-transportPostCreateHook
+Prototype: 
+mama_status dqstrategyMamaPlugin_initHook (mamaPluginInfo* pluginInfo)
 
-transportEventHook – this hook would take functionality to set the quality of subscriptions as maybe stale, depending on the type of message received.
+### transportPostCreateHook
 
-subscriptionPostCreateHook – this hook would initialise a dqStrategy and dqContext
+Prototype: 
+mama_status dqstrategyMamaPlugin_transportPostCreateHook (mamaPluginInfo pluginInfo)
 
-subscriptionpreMsgHook – this hook would take functionality from listenermsgcallback, and will be used to call dqStrategy_checkSeqNum() and other mechanisms such as processPointToPointMessage. 
+### transportEventHook – this hook would take functionality to set the quality of subscriptions as maybe stale, depending on the type of message received.
 
-shutdownHook
+Prototype: 
+mama_status dqstrategyMamaPlugin_transportEventHook(mamaPluginInfo pluginInfo, mamaTransport transport, int setStale)
 
+### subscriptionPostCreateHook – this hook would initialise a dqStrategy and dqContext
+
+Prototype: 
+mama_status dqstrategyMamaPlugin_subscriptionPostCreateHook (mamaPluginInfo pluginInfo, mamaSubscription subscription)
+
+### subscriptionpreMsgHook – this hook would take functionality from listenermsgcallback, and will be used to call dqStrategy_checkSeqNum() and other mechanisms such as processPointToPointMessage. 
+
+Prototype: 
+mama_status dqstrategyMamaPlugin_subscriptionPreMsgHook(mamaPluginInfo pluginInfo, mamaSubscription subscription, int msgType, mamaMsg msg)
+
+### shutdownHook
+
+Prototype: 
+mama_status dqstrategyMamaPlugin_shutdownHook (mamaPluginInfo pluginInfo)
 
 ### Language support
 
