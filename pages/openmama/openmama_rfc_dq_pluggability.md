@@ -110,21 +110,27 @@ This hook would take functionality to set the quality of subscriptions as maybe 
 
 Prototype:
 
-    mama_status dqstrategyMamaPlugin_transportEventHook(mamaPluginInfo pluginInfo, mamaTransport transport, int setStale)
+    mama_status dqstrategyMamaPlugin_transportEventHook(mamaPluginInfo pluginInfo,
+                                                        mamaTransport  transport,
+                                                        int            setStale)
 
 ### subscriptionPostCreateHook 
 This hook would initialise a dqStrategy and dqContext
 
 Prototype:
 
-    mama_status dqstrategyMamaPlugin_subscriptionPostCreateHook (mamaPluginInfo pluginInfo, mamaSubscription subscription)
+    mama_status dqstrategyMamaPlugin_subscriptionPostCreateHook (mamaPluginInfo   pluginInfo,
+                                                                 mamaSubscription subscription)
 
 ### subscriptionpreMsgHook 
 This hook would take functionality from listenermsgcallback, and will be used to call dqStrategy_checkSeqNum() and other mechanisms such as processPointToPointMessage. 
 
 Prototype: 
 
-    mama_status dqstrategyMamaPlugin_subscriptionPreMsgHook(mamaPluginInfo pluginInfo, mamaSubscription subscription, int msgType, mamaMsg msg)
+    mama_status dqstrategyMamaPlugin_subscriptionPreMsgHook(mamaPluginInfo    pluginInfo,
+                                                            mamaSubscription  subscription,
+                                                            int               msgType,
+                                                            mamaMsg           msg)
 
 ### shutdownHook
 
