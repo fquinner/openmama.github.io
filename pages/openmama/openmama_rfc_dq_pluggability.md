@@ -79,15 +79,15 @@ called at the correct time. Other functionality can simply exist as static funct
 
 The functions: 
 
-dqContext_fillGap
+    dqContext_fillGap
 
-handleFTTakeover
+    handleFTTakeover
 
-dqStrategy_checkSeqNum
+    dqStrategy_checkSeqNum
 
-handleStaleData
+    handleStaleData
 
-dqContext_applyPreInitialCache
+    dqContext_applyPreInitialCache
 
 will be moved from dqstrategy.c into dqstrategyplugin.c.  The existing dqContext and dqStrategy structures will remain in dqstrategy.c so that plugin developers may make use of them. 
 
@@ -95,36 +95,42 @@ The following hooks will be added:
 
 ### initHook
 
-Prototype: 
-mama_status dqstrategyMamaPlugin_initHook (mamaPluginInfo* pluginInfo)
+Prototype:
+
+    mama_status dqstrategyMamaPlugin_initHook (mamaPluginInfo* pluginInfo)
 
 ### transportPostCreateHook
 
-Prototype: 
-mama_status dqstrategyMamaPlugin_transportPostCreateHook (mamaPluginInfo pluginInfo)
+Prototype:
+
+    mama_status dqstrategyMamaPlugin_transportPostCreateHook (mamaPluginInfo pluginInfo)
 
 ### transportEventHook 
-this hook would take functionality to set the quality of subscriptions as maybe stale, depending on the type of message received.
+This hook would take functionality to set the quality of subscriptions as maybe stale, depending on the type of message received.
 
-Prototype: 
-mama_status dqstrategyMamaPlugin_transportEventHook(mamaPluginInfo pluginInfo, mamaTransport transport, int setStale)
+Prototype:
+
+    mama_status dqstrategyMamaPlugin_transportEventHook(mamaPluginInfo pluginInfo, mamaTransport transport, int setStale)
 
 ### subscriptionPostCreateHook 
-this hook would initialise a dqStrategy and dqContext
+This hook would initialise a dqStrategy and dqContext
 
-Prototype: 
-mama_status dqstrategyMamaPlugin_subscriptionPostCreateHook (mamaPluginInfo pluginInfo, mamaSubscription subscription)
+Prototype:
+
+    mama_status dqstrategyMamaPlugin_subscriptionPostCreateHook (mamaPluginInfo pluginInfo, mamaSubscription subscription)
 
 ### subscriptionpreMsgHook 
-this hook would take functionality from listenermsgcallback, and will be used to call dqStrategy_checkSeqNum() and other mechanisms such as processPointToPointMessage. 
+This hook would take functionality from listenermsgcallback, and will be used to call dqStrategy_checkSeqNum() and other mechanisms such as processPointToPointMessage. 
 
 Prototype: 
-mama_status dqstrategyMamaPlugin_subscriptionPreMsgHook(mamaPluginInfo pluginInfo, mamaSubscription subscription, int msgType, mamaMsg msg)
+
+    mama_status dqstrategyMamaPlugin_subscriptionPreMsgHook(mamaPluginInfo pluginInfo, mamaSubscription subscription, int msgType, mamaMsg msg)
 
 ### shutdownHook
 
-Prototype: 
-mama_status dqstrategyMamaPlugin_shutdownHook (mamaPluginInfo pluginInfo)
+Prototype:
+
+    mama_status dqstrategyMamaPlugin_shutdownHook (mamaPluginInfo pluginInfo)
 
 ### Language support
 
