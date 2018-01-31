@@ -103,17 +103,20 @@ mama_status dqstrategyMamaPlugin_initHook (mamaPluginInfo* pluginInfo)
 Prototype: 
 mama_status dqstrategyMamaPlugin_transportPostCreateHook (mamaPluginInfo pluginInfo)
 
-### transportEventHook – this hook would take functionality to set the quality of subscriptions as maybe stale, depending on the type of message received.
+### transportEventHook 
+this hook would take functionality to set the quality of subscriptions as maybe stale, depending on the type of message received.
 
 Prototype: 
 mama_status dqstrategyMamaPlugin_transportEventHook(mamaPluginInfo pluginInfo, mamaTransport transport, int setStale)
 
-### subscriptionPostCreateHook – this hook would initialise a dqStrategy and dqContext
+### subscriptionPostCreateHook 
+this hook would initialise a dqStrategy and dqContext
 
 Prototype: 
 mama_status dqstrategyMamaPlugin_subscriptionPostCreateHook (mamaPluginInfo pluginInfo, mamaSubscription subscription)
 
-### subscriptionpreMsgHook – this hook would take functionality from listenermsgcallback, and will be used to call dqStrategy_checkSeqNum() and other mechanisms such as processPointToPointMessage. 
+### subscriptionpreMsgHook 
+this hook would take functionality from listenermsgcallback, and will be used to call dqStrategy_checkSeqNum() and other mechanisms such as processPointToPointMessage. 
 
 Prototype: 
 mama_status dqstrategyMamaPlugin_subscriptionPreMsgHook(mamaPluginInfo pluginInfo, mamaSubscription subscription, int msgType, mamaMsg msg)
