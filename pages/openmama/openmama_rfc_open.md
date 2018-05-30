@@ -15,6 +15,6 @@ toc: false
 
 ## RFCs currently in review
 
-| RFC Title | Proposer  | Raised | Agreed | Merged | Released | Discussed | Document | Changes |
+| RFC Title | Proposer  | Raised | Agreed | Merged | Released | Discussed | Doc      | Changes |
 | --------- | --------- | ------ | ------ | ------ | -------- | --------- | -------- | ------- |
 | Source Discovery | [Gavin Ridgway](https://github.com/gridgway-arcontech) | 2017-09-13 | TBC | TBC | TBC  | [Archive](https://lists.openmama.org/pipermail/openmama-dev/2017/002087.html) | [View](openmama_rfc_source_discovery.html) | TBC |
