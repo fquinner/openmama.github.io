@@ -8,7 +8,7 @@ toc: false
 
 ## RFCs currently closed
 
-| RFC Title | Proposer  | Raised | Agreed | Merged | Released | Discussed | Document | Changes |
+| RFC Title | Proposer  | Raised | Agreed | Merged | Released | Discussed | Doc      | Changes |
 | --------- | --------- | ------ | ------ | ------ | -------- | --------- | -------- | ------- |
 | DQ Pluggability | [Aaron Sneddon](https://github.com/arn7374) | 2018-01-17 | 2018-02-03 | 2018-03-29 | TBC  | [Archive](https://lists.openmama.org/pipermail/openmama-dev/2018/002152.html) | [View](https://openmama.github.io/openmama_rfc_dq_pluggability.html) | [PR](https://github.com/OpenMAMA/OpenMAMA/pull/344) / [Commit](https://github.com/OpenMAMA/OpenMAMA/commit/6de60350f40b4d9b0f181b7e64e0d192798b9f97) |
 | Extended MAMA DateTime | [Frank Quinn](https://github.com/fquinner) | 2016-12-13 | 2017-01-07 | 2017-02-17 | [6.2.0](https://github.com/OpenMAMA/OpenMAMA/releases/tag/OpenMAMA-6.2.0-release)  | [Archive](https://lists.openmama.org/pipermail/openmama-dev/2016/001944.html) | [View](openmama_rfc_extended_datetime.html) | [PR](https://github.com/OpenMAMA/OpenMAMA/pull/248) |
